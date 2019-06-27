@@ -1,0 +1,69 @@
+@mixin at_1370 {
+	@media only screen and (max-width: 1370px) {
+		.heading {
+			font-size: 65px;
+			width: 80%;
+		}
+
+		.cards-wrapper {
+			width: 100%;
+			top: 32%;
+		}
+
+		.image-top {
+			height: 200px;
+		}
+	}
+}
+
+@mixin at_1000 {
+	@media only screen and (max-width: 1000px) {
+		.container {
+			height: 100%;
+		}
+		
+		.heading {
+			width: 90%; 
+		}
+
+		.cards-wrapper {
+			flex-wrap: wrap;
+			padding: 300px 0 200px 0;
+		}
+
+		.card {
+			margin: 0 30px 50px 30px;
+		}
+	}
+}
+
+@mixin at_700 {
+	@media only screen and (max-width: 700px) {
+		.heading {
+			font-size: 50px;
+			&::after {
+				height: 40px;
+			}
+		}
+
+		.cards-wrapper {
+			padding-top: 400px;
+		}
+	}
+}
+
+@mixin at_450 {
+	@media only screen and (max-width: 450px) {
+		.heading {
+			font-size: 40px;
+			&::after {
+				height: 33px;
+			}
+		}
+
+		.cards-wrapper {
+			flex-wrap: wrap;
+			padding: 250px 0 150px 0;
+		}
+	}
+}

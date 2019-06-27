@@ -1,0 +1,4 @@
+@mixin import_font($font_name) {
+	$font_name:unquote($font_name);
+	@import url(https://fonts.googleapis.com/css?family=#{$font_name});
+}

@@ -1,0 +1,225 @@
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/functions";
+@import "partials/responsive";
+
+
+@include import_font("Josefin+Sans");
+@include import_font("Montserrat");
+@include import_font("Ubuntu");
+
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(0,0,0,0.5) , rgba(0,0,0,0.5)), url(../images/bg.jpeg) no-repeat center;
+	background-size: cover; 
+	background-position: top;
+}
+
+.heading {
+	position: absolute;
+	text-align: center;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: "Josefin sans" , "Sans serif";
+	font-size: 70px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	color: #ffffff;
+	white-space: pre-wrap;
+}
+
+.heading::after {
+	content: "";
+	top: -5px;
+	height: 70px;
+	width: 4px;
+	background-color: tomato;
+	position: absolute;
+	animation: blink_cursor 0.5s 7;
+	animation-fill-mode: forwards;
+}
+
+@keyframes blink_cursor {
+	0% {background-color: tomato;}
+	50% {background-color: tomato;}
+	100% {background-color: transparent;}
+}
+
+
+.cards-wrapper {
+	position: relative;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%);
+	width: 80%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.card {
+	width: 280px;
+	background-color: #eee;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	transition: transform 0.5s;
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	&:hover .card-btn {
+		animation: button_shake 1.5s 0.5s linear;
+	}
+}
+
+
+@keyframes anim_card {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+.card:nth-child(1) {
+	animation: anim_card 1s 3s backwards;
+}
+
+.card:nth-child(2) {
+	animation: anim_card 1s 3.5s backwards;
+}
+
+.card:nth-child(3) {
+	animation: anim_card 1s 4s backwards;
+}
+
+
+@keyframes button_shake {
+	0% {transform: scale(1.0); transform: rotateZ(0);}
+	5% {transform: scale(1.2); transform: rotateZ(5deg);}
+	10% {transform: scale(1.2); transform: rotateZ(-5deg);}
+	15% {transform: scale(1.2); transform: rotateZ(5deg);}
+	20% {transform: scale(1.2); transform: rotateZ(-5deg);}
+	25% {transform: scale(1.2); transform: rotateZ(5deg);}
+	30% {transform: scale(1.2); transform: rotateZ(-5deg);}
+	35% {transform: scale(1.2); transform: rotateZ(5deg);}
+	40% {transform: scale(1.2); transform: rotateZ(-5deg);}
+	45% {transform: scale(1.2); transform: rotateZ(5deg);}
+	50% {transform: scale(1.2); transform: rotateZ(-5deg);}
+	55% {transform: scale(1.2); transform: rotateZ(5deg);}
+	60% {transform: scale(1.2); transform: rotateZ(-5deg);}
+	65% {transform: scale(1.2); transform: rotateZ(5deg);}
+	70% {transform: scale(1.2); transform: rotateZ(-5deg);}
+	75% {transform: scale(1.2); transform: rotateZ(5deg);}
+	80% {transform: scale(1.2); transform: rotateZ(-5deg);}
+	85% {transform: scale(1.2); transform: rotateZ(5deg);}
+	90% {transform: scale(1.2); transform: rotateZ(-5deg);}
+	95% {transform: scale(1.2); transform: rotateZ(5deg);}
+	100% {transform: scale(1.0); transform: rotateZ(0deg);}
+}
+
+.image-top {
+	width: 100%;
+	object-fit: cover;
+	-webkit-clip-path: polygon(0 0 , 100% 0 , 100% 73% , 0 100%);
+	clip-path: polygon(0 0 , 100% 0 , 100% 73% , 0 100%);
+}
+
+.profile-image {
+	width: 120px;
+	height: 120px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-top: -100px;
+	z-index: 1;
+	border:5px solid #ffffff;
+}
+
+.full-name {
+	font-family: "Ubuntu";
+	font-size: 22px;
+	color: #555555;
+	margin: 10px;
+}
+
+.job {
+	font-family: "Montserrat";
+	color: #777777;
+	font-weight: 300;
+}
+
+.description {
+	font-family: "Josefin sans" , "Sans serif";
+	font-size: 14px;
+	width: 90%;
+	margin:15px 0;
+	font-style: italic;
+	color: #444444;
+}
+
+.card-btn {
+	width: 120px;
+	padding: 7px;
+	margin: 10px 0;
+	border:none;
+	outline: none;
+	font-family: "Josefin sans" , "Sans serif";
+	border-radius: 5px;
+	color: #eeeeee;
+	background-color: tomato;
+	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+}
+
+.social-icons {
+	list-style-type: none;
+	width: 150px;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 10px 0 20px;
+	border-top: 1px solid rgba(0,0,0,0.4);
+	padding-top: 10px;
+}
+
+.social-icons i {
+	font-size: 18px;
+}
+
+.fa-facebook-f {
+	color: #3b5999;
+}
+
+.fa-youtube {
+	color: #cd201f;
+}
+
+.fa-twitter {
+	color: #55acee;
+}
+
+.fa-google-plus-g {
+	color: #dd43b9;
+}
+
+@include at_1370();
+@include at_1000();
+@include at_700();
+@include at_450();
+
+
+
+
+
+
+
+
+
+
+
+
+
